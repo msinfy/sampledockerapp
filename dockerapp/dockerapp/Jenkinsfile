@@ -1,8 +1,4 @@
-
-node {
-    
-    
-    
+pipeline {
    agent any
     
    tools{
@@ -16,9 +12,6 @@ node {
         checkout scm
        }
     
- 
 
-
-  
    
 }
