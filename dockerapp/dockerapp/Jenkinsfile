@@ -6,12 +6,14 @@ pipeline {
          dockerTool 'docker'
     }
 
+   stages{
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
         checkout scm
        }
-    
-
-   
+      
+      
+      
+   }   
 }
