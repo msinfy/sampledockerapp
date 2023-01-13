@@ -10,10 +10,13 @@ EXPOSE 443
 FROM mcr.microsoft.com/dotnet/aspnet:6.0 as build
 WORKDIR /src
 
-RUN dotnet restore
-COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp/
 
-RUN dotnet restore "dockerapp/dockerapp.csproj"
+#COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
+COPY dockerapp/*.sln .
+COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
+RUN dotnet restore
+#RUN dotnet restore "dockerapp/dockerapp.csproj"
+
 COPY . .
 WORKDIR "/src/dockerapp"
 RUN dotnet build "dockerapp.csproj" -c Release -o /app/build
