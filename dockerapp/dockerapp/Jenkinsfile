@@ -1,12 +1,30 @@
 
 node {
-    def app
+    
+    
+    
+   agent any
+    
+   tools{
+        
+         dockerTool 'docker'
+    }
 
     stage('Clone repository') {
         /* Cloning the Repository to our Workspace */
 
         checkout scm
-    }
+       }
+    
+    stage("Build image") {
+            steps {
+                script {
+                    myapp = docker.build("mdshafi/nodejs:${env.BUILD_ID}")
+                }
+            }
+        }
+        
+
 
   
    
