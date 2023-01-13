@@ -2,7 +2,7 @@
 #For more information, please see https://aka.ms/containercompat
 
 #FROM mcr.microsoft.com/dotnet/core/aspnet:2.1-nanoserver-1903 AS base
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 
+FROM  mcr.microsoft.com/dotnet/sdk:6.0
 # mcr.microsoft.com/dotnet/aspnet:6.0 as base
 WORKDIR /app
 EXPOSE 80
