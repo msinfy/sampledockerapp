@@ -14,7 +14,8 @@ WORKDIR /src
 #COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
 COPY dockerapp/*.sln .
 COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
-RUN dotnet restore
+RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN sudo dpkg -i packages-microsoft-prod.deb
 #RUN dotnet restore "dockerapp/dockerapp.csproj"
 
 COPY . .
