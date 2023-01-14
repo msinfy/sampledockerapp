@@ -15,8 +15,8 @@ WORKDIR /src
 
 
 #COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
-COPY dockerapp/*.sln .
-COPY ./dockerapp/dockerapp.csproj  dockerapp
+#COPY dockerapp/*.sln .
+COPY /dockerapp/dockerapp/dockerapp.csproj  dockerapp
 #--------------------------------------------------------------------------------------------------------------------
 
 #RUN dotnet sdk check
