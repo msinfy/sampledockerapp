@@ -15,7 +15,7 @@ WORKDIR /src
 
 
 #COPY dockerapp/dockerapp/dockerapp.csproj  dockerapp
-#COPY dockerapp/*.sln .
+COPY /dockerapp/*.sln .
 COPY /dockerapp/dockerapp/dockerapp.csproj  dockerapp
 #--------------------------------------------------------------------------------------------------------------------
 
