@@ -5,6 +5,13 @@ pipeline {
         
          dockerTool 'docker'
     }
+   
+    environment {
+                 
+        registry = "mdshafi/nodejs" 
+        registryCredential = 'dockerhub'      
+        
+    }
 
    stages{
    
