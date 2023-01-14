@@ -8,7 +8,7 @@ pipeline {
    
     environment {
                  
-        registry = "mdshafi/nodejs" 
+        registry = "mdshafi/sampledockerapp" 
         registryCredential = 'dockerhub'      
         
     }
