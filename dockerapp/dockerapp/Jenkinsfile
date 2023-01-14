@@ -8,7 +8,7 @@ pipeline {
    
     environment {
                  
-        registry = "mdshafi/nodejs" 
+        registry = "mdshafi/sampledockerapp" 
         registryCredential = 'dockerhub'      
         
     }
@@ -25,22 +25,13 @@ pipeline {
           stage("Build image") {
             steps {
                 script {
-                    myapp = docker.build("mdshafi/nodesjs:${env.BUILD_ID}")
+                    myapp = docker.build("mdshafi/sampledockerapp:${env.BUILD_ID}")
                 }
             }
         }
       
       
-            stage("Push image") {
-            steps {
-                script {
-                    docker.withRegistry('https://registry.hub.docker.com', 'dockerhub') {
-                            myapp.push("latest")
-                            myapp.push("${env.BUILD_ID}")
-                    }
-                }
-            }
-          }
+  
         
       
       
