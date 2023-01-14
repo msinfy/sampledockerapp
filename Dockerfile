@@ -31,7 +31,7 @@ RUN dotnet sdk check
 RUN dotnet restore "/src/dockerapp/dockerapp/dockerapp.csproj"
 
 COPY . .
-WORKDIR "/src/dockerapp"
+WORKDIR "/src/dockerapp/dockerapp"
 RUN dotnet build "dockerapp.csproj" -c Release -o /app/build
 
 FROM build AS publish
