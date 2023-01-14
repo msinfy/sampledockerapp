@@ -18,13 +18,13 @@ WORKDIR /src
 COPY /dockerapp/*.sln .
 COPY /dockerapp/dockerapp/dockerapp.csproj  .
 #--------------------------------------------------------------------------------------------------------------------
-
+RUN ls -lrt
 #RUN dotnet sdk check
 
 #-------------------------------------------------------------------------------------------------------------------------------
 
-#RUN dotnet restore --use-current-runtime  
-RUN dotnet restore "dockerapp/dockerapp.csproj"
+RUN dotnet restore --use-current-runtime  
+#RUN dotnet restore "dockerapp/dockerapp.csproj"
 
 COPY . .
 WORKDIR "/src/dockerapp"
