@@ -1,3 +1,5 @@
+// jenkins  file to build and push dotnet core app to docker hub
+
 pipeline {
    agent any
     
